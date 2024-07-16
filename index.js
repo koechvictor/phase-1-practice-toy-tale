@@ -34,32 +34,28 @@ function load_data() {
 }
 load_data()
 
-const addForm = document.forms['add-toy-form']
-
-addForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const data = {
-        name: document.querySelector('input[type="text" name="name"]').value,
-        name: document.querySelector('input[type="text" name="image"]').value
-    }
-    fetch('http://localhost:3000/toys', {
-        method: "post",
-        head: {
-            'content-type': 'applicaton/json'
-        },
-        body: JSON.stringify(data)
-    })
-
+const addNewToyBtn = document.getElementById('new-toy-btn')
+addNewToyBtn.addEventListener('click', (e) => {
+    //alert('testing')
+    const container = document.getElementById('container')
+    container.style.display = 'block'
 })
 
-const newToyBtn = document.getElementById('new-toy-btn')
-newToyBtn.addEventListener('click', (e) => {
-    alert('testing')
-    const container = document.getElementsByClassName('container')
-    if (container.style.display = 'none') {
-        container.style.display = "block"
-    } else {
-        container.style.display = "none"
-    }
-})
+//const addForm = document.forms['add-toy-form']
+
+//addForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   const data = {
+//       name: document.querySelector('input[type="text" name="name"]').value,
+//       name: document.querySelector('input[type="text" name="image"]').value
+//   }
+//   fetch('http://localhost:3000/toys', {
+//       method: "post",
+//       head: {
+//           'content-type': 'applicaton/json'
+//      },
+//      body: JSON.stringify(data)
+//  })
+
+//})
